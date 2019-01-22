@@ -1,0 +1,141 @@
+*{
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body{
+	background: #D4D4D4;
+	font-family: 'Open sans';
+}
+
+/* implementando el estilo de las imagenes en movimiento */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFVZ0e.ttf) format('truetype');
+}
+.container {
+	z-index:0;
+  width: 250px;
+  height: 150%;
+  position: relative;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.div-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.div-img.hidden {
+  overflow: hidden;
+}
+.div-img .img {
+	z-index: 1;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -webkit-transform: translate(0px, 0px);
+  -o-transform: translate(0px, 0px);
+  -webkit-transition: all 500ms ease-in-out;
+  -moz-transition: all 500ms ease-in-out;
+  -ms-transition: all 500ms ease-in-out;
+  -o-transition: all 500ms ease-in-out;
+}
+.div-img .text {
+  position: absolute;
+  z-index: -1;
+  display: block;
+  bottom: 50px;
+  width: 100%;
+  text-align: center;
+}
+.div-img:hover .img {
+  transform: translate(0px, -100px);
+  -ms-transform: translate(0px, -100px);
+  -moz-transform: translate(0px, -100px);
+  -webkit-transform: translate(0px, -400px); /*plano Y translate*/
+  -o-transform: translate(0px, -100px);
+}
+
+/*Aqui terminan las imagenes en*/
+
+.wrap{
+	width: 800px;
+	max-width: 90%;
+	margin: 30px auto;
+}
+
+ul.tabs{
+	width: 100%;
+	background: #363636;
+	list-style: none;
+	display: flex;
+}
+
+ul.tabs li{
+	width: 18%;
+}
+
+ul.tabs li a{
+	color: #fff;
+	text-decoration: none;
+	font-size: 16px;
+	text-align: center;
+
+	display: block;
+	padding: 20px 0px;
+}
+
+.active{
+	background: #0984CC;
+}
+
+ul.tabs li a .tab-text{
+	margin-left: 8px;
+}
+
+.secciones{
+	width: 100%;
+	background: #fff;
+}
+
+.secciones article{
+	padding: 30px;
+}
+
+.secciones article p{
+	text-align: justify;
+}
+
+
+@media screen and (max-width: 700px){
+	ul.tabs li{
+		width: none;
+		flex-basis: 0;
+		flex-grow: 1;
+	}
+}
+
+@media screen and (max-width: 450px){
+	ul.tabs li a{
+		padding: 15px 0px;
+	}
+
+	ul.tabs li a .tab-text{
+		display: none;
+	}
+
+	.secciones article{
+		padding: 20px;
+	}
+}
